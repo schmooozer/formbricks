@@ -16,6 +16,15 @@ import {
   createBlockJumpLogic,
 } from "@/app/lib/survey-block-builder";
 import { buildSurvey, getDefaultSurveyPreset, hiddenFieldsDefault } from "@/app/lib/survey-builder";
+import { bigFiveAssessmentTemplate } from "@/app/lib/templates/big-five-assessment-template";
+import { discAssessmentTemplate } from "@/app/lib/templates/disc-assessment-template";
+import { eiqAssessmentTemplate } from "@/app/lib/templates/eiq-assessment-template";
+import { learningStylesAssessmentTemplate } from "@/app/lib/templates/learning-styles-assessment-template";
+import { literacyAssessmentTemplate } from "@/app/lib/templates/literacy-assessment-template";
+import { logicalReasoningAssessmentTemplate } from "@/app/lib/templates/logical-reasoning-assessment-template";
+import { motivatorsAssessmentTemplate } from "@/app/lib/templates/motivators-assessment-template";
+import { myersBriggsAssessmentTemplate } from "@/app/lib/templates/myers-briggs-assessment-template";
+import { numeracyAssessmentTemplate } from "@/app/lib/templates/numeracy-assessment-template";
 import { createI18nString } from "@/lib/i18n/utils";
 
 const cartAbandonmentSurvey = (t: TFunction): TTemplate => {
@@ -4781,6 +4790,15 @@ export const templates = (t: TFunction): TTemplate[] => [
   professionalDevelopmentGrowth(t),
   professionalDevelopmentSurvey(t),
   careerDevelopmentSurvey(t),
+  discAssessmentTemplate(t),
+  bigFiveAssessmentTemplate(t),
+  myersBriggsAssessmentTemplate(t),
+  learningStylesAssessmentTemplate(t),
+  literacyAssessmentTemplate(t),
+  numeracyAssessmentTemplate(t),
+  logicalReasoningAssessmentTemplate(t),
+  eiqAssessmentTemplate(t),
+  motivatorsAssessmentTemplate(t),
 ];
 
 export const customSurveyTemplate = (t: TFunction): TTemplate => {
