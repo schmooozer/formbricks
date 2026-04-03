@@ -137,9 +137,10 @@ model Contact {
   updatedAt     DateTime           @updatedAt @map(name: "updated_at")
   environment   Environment        @relation(fields: [environmentId], references: [id], onDelete: Cascade)
   environmentId String
-  responses     Response[]
-  attributes    ContactAttribute[]
-  displays      Display[]
+  responses               Response[]
+  attributes              ContactAttribute[]
+  displays                Display[]
+  assessmentInvitations   AssessmentInvitation[]
 
   @@index([environmentId])
 }
@@ -182,6 +183,9 @@ model Response {
   language          String?
   displayId         String?             @unique
   display           Display?            @relation(fields: [displayId], references: [id])
+
+  assessmentResult    AssessmentResult?
+  assessmentInvitation AssessmentInvitation?
 
   @@unique([surveyId, singleUseId])
   @@index([createdAt])
@@ -411,6 +415,8 @@ model Survey {
   customHeadScripts     String?
   customHeadScriptsMode SurveyScriptMode? @default(add)
 
+  assessmentConfig AssessmentConfig?
+
   @@index([environmentId, updatedAt])
   @@index([segmentId])
 }
@@ -586,15 +592,16 @@ model Environment {
   project           Project               @relation(fields: [projectId], references: [id], onDelete: Cascade)
   projectId         String
   appSetupCompleted Boolean               @default(false)
-  surveys           Survey[]
-  contacts          Contact[]
-  actionClasses     ActionClass[]
-  attributeKeys     ContactAttributeKey[]
-  webhooks          Webhook[]
-  tags              Tag[]
-  segments          Segment[]
-  integration       Integration[]
-  ApiKeyEnvironment ApiKeyEnvironment[]
+  surveys              Survey[]
+  contacts             Contact[]
+  actionClasses        ActionClass[]
+  attributeKeys        ContactAttributeKey[]
+  webhooks             Webhook[]
+  tags                 Tag[]
+  segments             Segment[]
+  integration          Integration[]
+  ApiKeyEnvironment    ApiKeyEnvironment[]
+  assessmentCampaigns  AssessmentCampaign[]
 
   @@index([projectId])
 }
@@ -678,6 +685,7 @@ model Organization {
   isAIDataAnalysisEnabled Boolean              @default(false)
   teams                   Team[]
   apiKeys                 ApiKey[]
+  assessmentNormGroups    AssessmentNormGroup[]
 }
 
 /// Stores billing and Stripe synchronization data for an organization.
@@ -955,6 +963,7 @@ model Segment {
   environmentId String
   environment   Environment @relation(fields: [environmentId], references: [id], onDelete: Cascade)
   surveys       Survey[]
+  assessmentCampaigns AssessmentCampaign[]
 
   @@unique([environmentId, title])
 }
@@ -1066,4 +1075,166 @@ model ProjectTeam {
 
   @@id([projectId, teamId])
   @@index([teamId])
+}
+
+// ============================================================================
+// ASSESSMENT MODULE
+// ============================================================================
+
+enum AssessmentType {
+  disc
+  bigFive
+  myersBriggs
+  skillsCompetency
+  threeSixtyFeedback
+  custom
+}
+
+enum AssessmentCampaignStatus {
+  draft
+  active
+  paused
+  completed
+  archived
+}
+
+/// Defines the assessment configuration attached to a survey.
+/// Each survey may have zero or one assessment config.
+///
+/// @property type - The assessment framework (DISC, Big Five, etc.)
+/// @property dimensions - Scoring dimensions with variable mappings
+/// @property interpretations - Score-range-to-text mappings per dimension
+/// @property reportConfig - Branding, chart preferences, layout settings
+/// @property scoringRules - How scores are computed and normalized
+/// @property normGroups - Reference norm groups for benchmarking
+model AssessmentConfig {
+  id              String                @id @default(cuid())
+  createdAt       DateTime              @default(now()) @map(name: "created_at")
+  updatedAt       DateTime              @updatedAt @map(name: "updated_at")
+  survey          Survey                @relation(fields: [surveyId], references: [id], onDelete: Cascade)
+  surveyId        String                @unique
+  type            AssessmentType
+  /// [AssessmentDimensions]
+  dimensions      Json                  @default("[]")
+  /// [AssessmentInterpretations]
+  interpretations Json                  @default("[]")
+  /// [AssessmentReportConfig]
+  reportConfig    Json                  @default("{}")
+  /// [AssessmentNormGroups]
+  normGroups      Json                  @default("[]")
+  /// [AssessmentScoringRules]
+  scoringRules    Json                  @default("{}")
+  results         AssessmentResult[]
+  campaigns       AssessmentCampaign[]
+
+  @@index([surveyId])
+}
+
+/// Stores computed assessment results per response.
+/// Scores are calculated server-side when a response is finished.
+///
+/// @property scores - Raw dimension scores { dimensionKey: number }
+/// @property normalizedScores - Percentile/z-score normalized scores
+/// @property profile - Derived classification (primary type, label, summary)
+/// @property aiInsights - AI-generated narrative insights
+/// @property accessToken - Token for public result access by respondent
+model AssessmentResult {
+  id                 String           @id @default(cuid())
+  createdAt          DateTime         @default(now()) @map(name: "created_at")
+  updatedAt          DateTime         @updatedAt @map(name: "updated_at")
+  assessmentConfig   AssessmentConfig @relation(fields: [assessmentConfigId], references: [id], onDelete: Cascade)
+  assessmentConfigId String
+  response           Response         @relation(fields: [responseId], references: [id], onDelete: Cascade)
+  responseId         String           @unique
+  /// [AssessmentScores]
+  scores             Json             @default("{}")
+  /// [AssessmentNormalizedScores]
+  normalizedScores   Json             @default("{}")
+  /// [AssessmentProfile]
+  profile            Json             @default("{}")
+  aiInsights         String?
+  pdfUrl             String?
+  accessToken        String           @unique @default(cuid())
+
+  @@index([assessmentConfigId])
+  @@index([responseId])
+}
+
+/// Campaign for bulk-issuing assessments to contacts or segments.
+/// Supports scheduling, deadlines, and automated reminders.
+///
+/// @property name - Display name for the campaign
+/// @property status - Current lifecycle state
+/// @property segmentId - Target contacts via segment
+/// @property deadlineAt - Assessment completion deadline
+/// @property reminderIntervals - Days before deadline to send reminders
+model AssessmentCampaign {
+  id                 String                  @id @default(cuid())
+  createdAt          DateTime                @default(now()) @map(name: "created_at")
+  updatedAt          DateTime                @updatedAt @map(name: "updated_at")
+  name               String
+  status             AssessmentCampaignStatus @default(draft)
+  assessmentConfig   AssessmentConfig        @relation(fields: [assessmentConfigId], references: [id], onDelete: Cascade)
+  assessmentConfigId String
+  environmentId      String
+  environment        Environment             @relation(fields: [environmentId], references: [id], onDelete: Cascade)
+  segmentId          String?
+  segment            Segment?                @relation(fields: [segmentId], references: [id])
+  scheduledAt        DateTime?
+  deadlineAt         DateTime?
+  /// [AssessmentReminderIntervals]
+  reminderIntervals  Json                    @default("[]")
+  invitations        AssessmentInvitation[]
+
+  @@index([assessmentConfigId])
+  @@index([environmentId])
+}
+
+/// Individual invitation tracking for assessment campaigns.
+/// Tracks the full lifecycle from pending -> sent -> completed.
+///
+/// @property status - pending, sent, opened, started, completed, expired
+/// @property sentAt - When the invitation email was sent
+/// @property completedAt - When the assessment was finished
+model AssessmentInvitation {
+  id          String              @id @default(cuid())
+  createdAt   DateTime            @default(now()) @map(name: "created_at")
+  campaign    AssessmentCampaign  @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  campaignId  String
+  contactId   String
+  contact     Contact             @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  status      String              @default("pending")
+  sentAt      DateTime?
+  completedAt DateTime?
+  responseId  String?             @unique
+  response    Response?           @relation(fields: [responseId], references: [id])
+
+  @@unique([campaignId, contactId])
+  @@index([campaignId])
+  @@index([contactId])
+}
+
+/// Norm group for benchmarking assessment results.
+/// Stores statistical distributions (mean, stdDev, percentiles) per dimension.
+/// Can be global (cross-org) or organisation-specific.
+///
+/// @property assessmentType - Which assessment framework this norm applies to
+/// @property sampleSize - Number of responses in the norm group
+/// @property statistics - Per-dimension statistical data
+model AssessmentNormGroup {
+  id             String           @id @default(cuid())
+  createdAt      DateTime         @default(now()) @map(name: "created_at")
+  updatedAt      DateTime         @updatedAt @map(name: "updated_at")
+  name           String
+  description    String?
+  assessmentType AssessmentType
+  organizationId String?
+  organization   Organization?    @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  sampleSize     Int              @default(0)
+  /// [NormGroupStatistics]
+  statistics     Json             @default("{}")
+  isGlobal       Boolean          @default(false)
+
+  @@index([assessmentType])
+  @@index([organizationId])
 }
