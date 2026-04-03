@@ -16,6 +16,7 @@ import { getResponseCountBySurveyId } from "@/lib/response/service";
 import { getSurvey, updateSurvey } from "@/lib/survey/service";
 import { convertDatesInObject } from "@/lib/time";
 import { validateWebhookUrl } from "@/lib/utils/validate-webhook-url";
+import { processAssessmentForResponse } from "@/modules/assessment/lib/assessment-pipeline";
 import { queueAuditEvent } from "@/modules/ee/audit-logs/lib/handler";
 import { TAuditStatus, UNKNOWN_DATA } from "@/modules/ee/audit-logs/types/audit-log";
 import { recordResponseCreatedMeterEvent } from "@/modules/ee/billing/lib/metering";
@@ -273,6 +274,9 @@ export const POST = async (request: Request) => {
         });
       }
     }
+
+    // Process assessment scoring if survey has assessment config
+    await processAssessmentForResponse(surveyId, response.id);
 
     // Await webhook and email promises with allSettled to prevent early rejection
     const results = await Promise.allSettled([...webhookPromises, ...emailPromises]);

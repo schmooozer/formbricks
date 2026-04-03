@@ -16,6 +16,7 @@ import {
   createBlockJumpLogic,
 } from "@/app/lib/survey-block-builder";
 import { buildSurvey, getDefaultSurveyPreset, hiddenFieldsDefault } from "@/app/lib/survey-builder";
+import { discAssessmentTemplate } from "@/app/lib/templates/disc-assessment-template";
 import { createI18nString } from "@/lib/i18n/utils";
 
 const cartAbandonmentSurvey = (t: TFunction): TTemplate => {
@@ -4781,6 +4782,7 @@ export const templates = (t: TFunction): TTemplate[] => [
   professionalDevelopmentGrowth(t),
   professionalDevelopmentSurvey(t),
   careerDevelopmentSurvey(t),
+  discAssessmentTemplate(t),
 ];
 
 export const customSurveyTemplate = (t: TFunction): TTemplate => {
