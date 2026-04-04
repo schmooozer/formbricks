@@ -7569,6 +7569,524 @@ const workforceCapacitySurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const rapidHrDiagnosticSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.rapid_hr_diagnostic_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.rapid_hr_diagnostic_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        // Section 1: Business Strategy & Workforce Alignment
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_01_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_01_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_01_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_02_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_02_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_02_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_03_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_03_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_03_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_03_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_03_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_03_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 2: Leadership & Management Capability
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_04_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_04_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_04_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_05_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_05_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_05_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_06_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_06_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_06_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_06_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_06_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_06_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 3: Organisational Structure & Role Clarity
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_07_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_07_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_07_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_08_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_08_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_08_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 4: Recruitment & Hiring Effectiveness
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_09_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_09_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_09_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_10_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_10_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_10_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_10_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_10_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_10_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_11_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_11_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_11_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 5: Onboarding & Early Employee Experience
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_12_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_12_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_12_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_13_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_13_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_13_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_13_choice_4"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_13_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 6: Performance Management & Accountability
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_14_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_14_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_14_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_15_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_15_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_15_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_16_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_16_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_16_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_16_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_16_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_16_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 7: Culture, Engagement & Communication
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_17_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_17_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_17_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_18_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_18_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_18_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_19_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_19_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_19_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_19_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_19_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_19_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 8: Retention & Attrition Risk
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_20_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_20_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_20_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_21_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_21_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_21_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_21_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_21_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_21_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_22_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_22_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_22_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 9: Compliance & Employment Risk
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_23_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_23_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_23_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_23_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_23_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_23_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_24_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_24_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_24_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_25_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_25_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_25_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_25_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_25_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_25_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 10: Systems, Processes & Workforce Efficiency
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_26_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_26_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_26_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_27_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_27_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_27_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        // Section 11: Workforce Capacity & Workload Pressure
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.rapid_hr_diagnostic_survey_question_28_headline"),
+              required: true,
+              lowerLabel: t("templates.rapid_hr_diagnostic_survey_question_28_lower_label"),
+              upperLabel: t("templates.rapid_hr_diagnostic_survey_question_28_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.rapid_hr_diagnostic_survey_question_29_choice_1"),
+                t("templates.rapid_hr_diagnostic_survey_question_29_choice_2"),
+                t("templates.rapid_hr_diagnostic_survey_question_29_choice_3"),
+                t("templates.rapid_hr_diagnostic_survey_question_29_choice_4"),
+                t("templates.rapid_hr_diagnostic_survey_question_29_choice_5"),
+              ],
+              headline: t("templates.rapid_hr_diagnostic_survey_question_29_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        // Final: Open diagnostic question
+        buildBlock({
+          name: t("templates.rapid_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.rapid_hr_diagnostic_survey_question_30_headline"),
+              required: false,
+              placeholder: t("templates.rapid_hr_diagnostic_survey_question_30_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -7632,6 +8150,7 @@ export const templates = (t: TFunction): TTemplate[] => [
   techToolsEffectivenessSurvey(t),
   psychSafetyTeamDynamicsSurvey(t),
   workforceCapacitySurvey(t),
+  rapidHrDiagnosticSurvey(t),
   employeeWellBeing(t),
   longTermRetentionCheckIn(t),
   supportiveWorkCulture(t),
