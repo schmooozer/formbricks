@@ -11289,6 +11289,1924 @@ const managerHrDiagnosticSurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const ownerHrDiagnosticSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.owner_hr_diagnostic_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.owner_hr_diagnostic_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_001_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_001_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_001_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_002_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_002_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_002_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_003_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_003_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_003_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_004_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_005_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_005_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_006_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_006_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_006_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_01"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.owner_hr_diagnostic_survey_question_007_headline"),
+              required: false,
+              placeholder: t("templates.owner_hr_diagnostic_survey_question_007_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_008_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_008_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_008_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_009_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_009_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_009_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_010_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_010_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_010_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_011_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_012_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_012_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_013_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_02"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_014_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_014_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_014_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_015_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_015_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_015_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_016_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_016_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_016_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_017_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_017_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_017_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_018_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_019_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_019_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_020_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_03"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_021_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_021_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_021_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_022_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_022_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_022_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_023_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_023_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_023_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_024_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_024_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_024_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_024_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_024_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_024_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_025_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_026_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_026_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_027_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_027_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_027_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_027_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_027_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_027_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_04"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_028_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_028_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_028_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_029_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_029_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_029_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_030_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_030_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_030_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_031_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_031_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_031_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_031_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_031_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_031_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_032_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_033_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_033_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_034_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_034_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_034_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_05"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_035_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_035_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_035_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_036_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_036_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_036_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_037_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_037_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_037_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_038_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_038_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_038_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_038_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_038_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_038_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_039_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_039_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_039_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_040_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_041_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_041_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_06"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_042_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_042_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_042_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_043_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_043_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_043_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_044_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_044_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_044_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_045_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_045_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_045_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_045_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_045_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_045_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_046_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_047_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_047_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_048_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_048_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_048_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_07"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_049_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_049_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_049_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_050_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_050_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_050_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_050_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_050_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_050_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_051_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_051_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_051_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_052_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_052_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_052_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_053_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_053_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_054_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_055_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_055_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_055_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_08"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_056_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_057_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_057_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_057_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_058_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_058_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_058_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_059_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_059_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_059_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_059_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_059_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_059_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_060_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_061_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_061_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_062_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_062_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_062_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_09"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_063_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_063_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_063_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_064_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_064_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_064_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_064_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_064_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_064_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_065_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_065_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_065_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_066_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_066_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_066_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_066_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_066_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_066_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_067_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_067_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_067_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_068_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_069_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_069_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_10"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_070_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_070_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_070_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_071_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_071_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_071_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_072_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_072_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_072_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_073_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_073_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_073_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_073_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_073_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_073_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_074_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_075_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_075_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_075_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_11"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_076_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_076_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_076_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_077_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_077_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_077_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_078_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_078_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_078_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_079_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_079_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_079_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_079_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_079_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_079_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_080_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_081_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_081_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_082_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_082_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_082_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_12"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_083_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_083_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_083_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_084_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_084_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_084_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_085_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_086_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_087_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_087_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_088_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_088_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_088_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_089_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_089_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_089_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_13"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_090_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_091_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_091_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_091_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_092_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_092_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_092_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_093_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_093_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_093_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_093_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_093_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_093_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_094_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_095_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_095_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_096_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_096_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_096_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_14"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_097_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_097_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_097_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_098_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_098_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_098_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_099_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_100_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_101_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_101_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_102_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_102_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_102_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_103_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_103_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_103_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_15"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_104_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_105_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_105_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_105_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_105_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_105_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_105_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_106_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_106_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_106_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_107_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_107_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_107_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_107_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_107_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_107_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_freq_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_freq_choice_5"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_108_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_1"),
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_2"),
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_3"),
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_4"),
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_5"),
+                t("templates.owner_hr_diagnostic_survey_question_109_choice_6"),
+              ],
+              headline: t("templates.owner_hr_diagnostic_survey_question_109_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_110_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_110_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_110_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.owner_hr_diagnostic_survey_question_111_headline"),
+              required: true,
+              lowerLabel: t("templates.owner_hr_diagnostic_survey_question_111_lower_label"),
+              upperLabel: t("templates.owner_hr_diagnostic_survey_question_111_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.owner_hr_diagnostic_survey_section_16"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.owner_hr_diagnostic_survey_question_112_headline"),
+              required: false,
+              placeholder: t("templates.owner_hr_diagnostic_survey_question_112_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -11355,6 +13273,7 @@ export const templates = (t: TFunction): TTemplate[] => [
   rapidHrDiagnosticSurvey(t),
   fullHrDiagnosticSurvey(t),
   managerHrDiagnosticSurvey(t),
+  ownerHrDiagnosticSurvey(t),
   employeeWellBeing(t),
   longTermRetentionCheckIn(t),
   supportiveWorkCulture(t),
