@@ -6010,6 +6010,119 @@ const postExitFollowUpSurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const stayInterviewSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.stay_interview_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.stay_interview_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceMulti,
+              shuffleOption: "none",
+              choices: [
+                t("templates.stay_interview_survey_question_1_choice_1"),
+                t("templates.stay_interview_survey_question_1_choice_2"),
+                t("templates.stay_interview_survey_question_1_choice_3"),
+                t("templates.stay_interview_survey_question_1_choice_4"),
+                t("templates.stay_interview_survey_question_1_choice_5"),
+                t("templates.stay_interview_survey_question_1_choice_6"),
+                t("templates.stay_interview_survey_question_1_choice_7"),
+              ],
+              headline: t("templates.stay_interview_survey_question_1_headline"),
+              subheader: t("templates.stay_interview_survey_question_1_subheader"),
+              required: true,
+              containsOther: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.stay_interview_survey_question_2_headline"),
+              required: true,
+              lowerLabel: t("templates.stay_interview_survey_question_2_lower_label"),
+              upperLabel: t("templates.stay_interview_survey_question_2_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.stay_interview_survey_question_3_headline"),
+              required: false,
+              placeholder: t("templates.stay_interview_survey_question_3_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.stay_interview_survey_question_4_headline"),
+              required: true,
+              lowerLabel: t("templates.stay_interview_survey_question_4_lower_label"),
+              upperLabel: t("templates.stay_interview_survey_question_4_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.stay_interview_survey_question_5_headline"),
+              required: false,
+              placeholder: t("templates.stay_interview_survey_question_5_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.stay_interview_survey_question_6_headline"),
+              required: true,
+              lowerLabel: t("templates.stay_interview_survey_question_6_lower_label"),
+              upperLabel: t("templates.stay_interview_survey_question_6_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -6061,6 +6174,7 @@ export const templates = (t: TFunction): TTemplate[] => [
   employeeLifecycleEventSurvey(t),
   exitSurvey(t),
   postExitFollowUpSurvey(t),
+  stayInterviewSurvey(t),
   employeeWellBeing(t),
   longTermRetentionCheckIn(t),
   supportiveWorkCulture(t),
