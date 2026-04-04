@@ -6670,6 +6670,131 @@ const changeImpactSurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const deiSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.dei_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.dei_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.dei_survey_question_1_headline"),
+              required: true,
+              lowerLabel: t("templates.dei_survey_question_1_lower_label"),
+              upperLabel: t("templates.dei_survey_question_1_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.dei_survey_question_2_headline"),
+              required: true,
+              lowerLabel: t("templates.dei_survey_question_2_lower_label"),
+              upperLabel: t("templates.dei_survey_question_2_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.dei_survey_question_3_headline"),
+              required: true,
+              lowerLabel: t("templates.dei_survey_question_3_lower_label"),
+              upperLabel: t("templates.dei_survey_question_3_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              shuffleOption: "none",
+              choices: [
+                t("templates.dei_survey_question_4_choice_1"),
+                t("templates.dei_survey_question_4_choice_2"),
+                t("templates.dei_survey_question_4_choice_3"),
+                t("templates.dei_survey_question_4_choice_4"),
+              ],
+              headline: t("templates.dei_survey_question_4_headline"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.dei_survey_question_5_headline"),
+              required: true,
+              lowerLabel: t("templates.dei_survey_question_5_lower_label"),
+              upperLabel: t("templates.dei_survey_question_5_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.dei_survey_question_6_headline"),
+              required: true,
+              lowerLabel: t("templates.dei_survey_question_6_lower_label"),
+              upperLabel: t("templates.dei_survey_question_6_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.dei_survey_question_7_headline"),
+              required: false,
+              placeholder: t("templates.dei_survey_question_7_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -6726,6 +6851,7 @@ export const templates = (t: TFunction): TTemplate[] => [
   cultureEthicsSurvey(t),
   payBenefitsPerceptionSurvey(t),
   changeImpactSurvey(t),
+  deiSurvey(t),
   employeeWellBeing(t),
   longTermRetentionCheckIn(t),
   supportiveWorkCulture(t),
