@@ -1,7 +1,19 @@
 import { createId } from "@paralleldrive/cuid2";
 import type { TAssessmentTemplatePreset } from "@formbricks/types/assessments";
 
-// Variable IDs
+/**
+ * Myers-Briggs Type Indicator (MBTI) Assessment Template
+ *
+ * 32 forced-choice questions across 4 dichotomy pairs (8 per pair).
+ * Each question presents two options; the first maps to the first pole
+ * and the second maps to the second pole of the dichotomy.
+ *
+ * Uses ipsative scoring: selecting an option increments the corresponding
+ * dimension variable by 1. The 4-letter type code is determined by which
+ * pole scores higher in each pair.
+ */
+
+// Variable IDs for survey variables
 const VAR_E = "mb_e";
 const VAR_I = "mb_i";
 const VAR_S = "mb_s";
@@ -11,12 +23,13 @@ const VAR_F = "mb_f";
 const VAR_J = "mb_j";
 const VAR_P = "mb_p";
 
-export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = [
+export const MBTI_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = [
   {
     id: createId(),
     key: "E",
     name: "Extraversion",
-    description: "Energised by the outer world of people and activity",
+    description:
+      "Preference for drawing energy from the outer world of people, activities, and social interaction.",
     variableId: VAR_E,
     minScore: 0,
     maxScore: 8,
@@ -27,7 +40,8 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
     id: createId(),
     key: "I",
     name: "Introversion",
-    description: "Energised by the inner world of ideas and reflection",
+    description:
+      "Preference for drawing energy from the inner world of ideas, reflections, and solitary activities.",
     variableId: VAR_I,
     minScore: 0,
     maxScore: 8,
@@ -38,7 +52,8 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
     id: createId(),
     key: "S",
     name: "Sensing",
-    description: "Focuses on concrete facts, details, and present reality",
+    description:
+      "Preference for taking in information through the five senses, focusing on facts and concrete details.",
     variableId: VAR_S,
     minScore: 0,
     maxScore: 8,
@@ -49,18 +64,19 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
     id: createId(),
     key: "N",
     name: "Intuition",
-    description: "Focuses on patterns, possibilities, and future potential",
+    description: "Preference for taking in information through patterns, possibilities, and the big picture.",
     variableId: VAR_N,
     minScore: 0,
     maxScore: 8,
     color: "#8B5CF6",
-    icon: "sparkles",
+    icon: "lightbulb",
   },
   {
     id: createId(),
     key: "T",
     name: "Thinking",
-    description: "Makes decisions based on logic, analysis, and objectivity",
+    description:
+      "Preference for making decisions based on objective logic, analysis, and consistent principles.",
     variableId: VAR_T,
     minScore: 0,
     maxScore: 8,
@@ -71,7 +87,8 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
     id: createId(),
     key: "F",
     name: "Feeling",
-    description: "Makes decisions based on values, harmony, and personal impact",
+    description:
+      "Preference for making decisions based on personal values, empathy, and the impact on people.",
     variableId: VAR_F,
     minScore: 0,
     maxScore: 8,
@@ -82,18 +99,18 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
     id: createId(),
     key: "J",
     name: "Judging",
-    description: "Prefers structure, planning, and decisive action",
+    description: "Preference for a structured, planned, and organised approach to the outer world.",
     variableId: VAR_J,
     minScore: 0,
     maxScore: 8,
     color: "#EF4444",
-    icon: "check-square",
+    icon: "clipboardCheck",
   },
   {
     id: createId(),
     key: "P",
     name: "Perceiving",
-    description: "Prefers flexibility, spontaneity, and keeping options open",
+    description: "Preference for a flexible, spontaneous, and adaptable approach to the outer world.",
     variableId: VAR_P,
     minScore: 0,
     maxScore: 8,
@@ -102,7 +119,8 @@ export const MYERS_BRIGGS_DIMENSIONS: TAssessmentTemplatePreset["dimensions"] = 
   },
 ];
 
-export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpretations"] = [
+export const MBTI_INTERPRETATIONS: TAssessmentTemplatePreset["interpretations"] = [
+  // ── Extraversion ──────────────────────────────────────────────────────────
   {
     dimensionKey: "E",
     ranges: [
@@ -111,16 +129,11 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Extraversion",
         description:
-          "You have a mild preference for extraversion. You can draw energy from social interaction but also value time alone. You are adaptable in both group and solo settings.",
-        strengths: [
-          "Adaptable in social settings",
-          "Comfortable in both group and solo work",
-          "Balanced energy management",
-        ],
-        blindSpots: ["May not fully leverage networking opportunities"],
+          "You show a mild preference for extraversion. While you can enjoy social interaction, it is not your primary source of energy. You may function well in both collaborative and independent settings, leaning slightly towards the social side when given a choice.",
+        strengths: ["Flexible social engagement", "Can work in both team and solo settings"],
+        blindSpots: ["Preference may be unclear to colleagues"],
         recommendations: [
-          "Experiment with leading more group discussions",
-          "Notice when social energy fuels your best work",
+          "Experiment with both collaborative and solo work to identify what suits each task best",
         ],
       },
       {
@@ -128,17 +141,15 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 5,
         label: "Moderate Extraversion",
         description:
-          "You clearly prefer the outer world of people and activity. You think best by talking things through and enjoy collaborative environments. You are energised by interaction and may find prolonged isolation draining.",
-        strengths: [
-          "Strong communicator",
-          "Builds relationships easily",
-          "Thrives in collaborative settings",
-          "Quick to initiate action",
+          "You have a clear preference for engaging with the external world. You are energised by interaction, enjoy collaborative work, and tend to think out loud. You communicate readily and build rapport with ease, making you a natural connector within your team.",
+        strengths: ["Strong communicator", "Builds rapport easily", "Energises group settings"],
+        blindSpots: [
+          "May dominate quieter colleagues in discussions",
+          "Could struggle with prolonged solitary work",
         ],
-        blindSpots: ["May dominate conversations", "Can find solo focused work challenging"],
         recommendations: [
-          "Schedule focused alone time for deep work",
-          "Practice active listening in meetings",
+          "Create space for introverted colleagues to contribute",
+          "Schedule focused solo time for deep work",
         ],
       },
       {
@@ -146,26 +157,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Extraversion",
         description:
-          "You have a strong preference for extraversion. You are highly energised by people, action, and external stimulation. You process thoughts by speaking and prefer a fast-paced, interactive environment.",
+          "You have a strong preference for the outer world of people and action. You are at your best in social, high-energy environments and may feel restless when working alone for long periods. You are outgoing, expressive, and often the person who initiates conversations and activities.",
         strengths: [
-          "Excellent networker",
-          "High energy in team settings",
-          "Natural group facilitator",
-          "Action-oriented",
+          "Highly sociable and approachable",
+          "Excellent at networking and relationship-building",
+          "Brings energy and enthusiasm to teams",
         ],
         blindSpots: [
-          "May overlook need for reflection",
-          "Can seem overwhelming to introverts",
-          "May rush decisions without quiet analysis",
+          "May find prolonged solitary tasks draining",
+          "Could overlook the need for quiet reflection",
         ],
         recommendations: [
-          "Build in reflection time before major decisions",
-          "Learn to read when colleagues need space",
-          "Try journaling to complement verbal processing",
+          "Build short solo-reflection breaks into your day",
+          "Seek feedback from quieter team members you may inadvertently overshadow",
         ],
       },
     ],
   },
+
+  // ── Introversion ──────────────────────────────────────────────────────────
   {
     dimensionKey: "I",
     ranges: [
@@ -174,27 +184,22 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Introversion",
         description:
-          "You have a mild preference for introversion. You value quiet reflection but are comfortable in social settings when needed.",
-        strengths: ["Flexible between social and solo work", "Good listener", "Thoughtful contributor"],
-        blindSpots: ["May not speak up enough in groups"],
-        recommendations: ["Push yourself to share ideas earlier in discussions"],
+          "You show a mild preference for introversion. You can engage socially when needed but may slightly prefer quieter environments. This gentle preference gives you flexibility across different work contexts.",
+        strengths: ["Adaptable to social and solitary settings", "Balanced energy management"],
+        blindSpots: ["May not advocate strongly enough for your need for quiet time"],
+        recommendations: ["Be intentional about protecting focus time when you need it"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Introversion",
         description:
-          "You clearly prefer the inner world of ideas and reflection. You think best when you have time to process internally and prefer depth over breadth in relationships and topics.",
-        strengths: [
-          "Deep thinker",
-          "Excellent listener",
-          "Focused and concentrated",
-          "Builds deep relationships",
-        ],
-        blindSpots: ["May be perceived as distant", "Could miss opportunities by not speaking up"],
+          "You have a clear preference for the inner world of ideas and reflection. You recharge through solitude, prefer meaningful one-on-one conversations, and do your best thinking independently. You are a careful listener who contributes thoughtful, well-considered perspectives.",
+        strengths: ["Deep thinker", "Excellent listener", "Produces high-quality independent work"],
+        blindSpots: ["May hesitate to share ideas in group settings", "Could be perceived as disengaged"],
         recommendations: [
-          "Share your ideas proactively in meetings",
-          "Build a small trusted network for collaboration",
+          "Prepare key points before meetings to ensure your voice is heard",
+          "Use written communication to share ideas when speaking up feels difficult",
         ],
       },
       {
@@ -202,26 +207,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Introversion",
         description:
-          "You have a strong preference for introversion. You are most productive in quiet environments and need substantial alone time to recharge. You process deeply and produce well-considered work.",
+          "You have a strong preference for the inner world. You need significant quiet time to recharge and do your best work in solitary or small-group environments. You are deeply reflective, often producing insights that others miss because of the depth of your thinking.",
         strengths: [
-          "Exceptional focus",
+          "Exceptional focus and concentration",
           "Deep analytical thinking",
-          "Independent worker",
-          "Thoughtful decision-maker",
+          "Self-sufficient and independent",
         ],
         blindSpots: [
-          "May avoid necessary networking",
-          "Can seem unapproachable",
-          "May over-process before acting",
+          "May avoid social situations that could benefit your career",
+          "Could be perceived as aloof or unapproachable",
         ],
         recommendations: [
-          "Set specific goals for relationship-building",
-          "Practice sharing work-in-progress ideas",
-          "Find an extraverted partner for collaborative tasks",
+          "Set a regular cadence for one-on-one relationship building",
+          "Share your work and insights proactively rather than waiting to be asked",
         ],
       },
     ],
   },
+
+  // ── Sensing ───────────────────────────────────────────────────────────────
   {
     dimensionKey: "S",
     ranges: [
@@ -230,27 +234,29 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Sensing",
         description:
-          "You have a mild preference for sensing. You appreciate concrete facts but can also engage with abstract concepts when needed.",
-        strengths: ["Balanced between detail and big-picture", "Practical yet open to new ideas"],
-        blindSpots: ["May sometimes miss important details"],
-        recommendations: ["Double-check factual accuracy on important projects"],
+          "You show a mild preference for concrete, factual information. While you can appreciate abstract ideas, you tend to gravitate slightly towards practical, real-world data when making decisions.",
+        strengths: ["Grounded with some openness to abstraction", "Flexible information processing"],
+        blindSpots: ["May not fully leverage your practical instincts"],
+        recommendations: ["Trust your attention to detail as a genuine strength in data-heavy tasks"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Sensing",
         description:
-          "You clearly prefer working with concrete, tangible information. You trust experience and facts over theories. You are detail-oriented and prefer step-by-step instructions.",
+          "You have a clear preference for working with concrete facts, proven methods, and tangible outcomes. You are detail-oriented and practical, preferring step-by-step processes over abstract brainstorming. You bring a grounding, realistic perspective to teams that may otherwise get lost in possibilities.",
         strengths: [
-          "Excellent attention to detail",
-          "Reliable and thorough",
-          "Practical problem-solver",
-          "Grounded in reality",
+          "Detail-oriented and thorough",
+          "Practical and results-focused",
+          "Reliable with facts and data",
         ],
-        blindSpots: ["May resist unproven approaches", "Could miss long-term strategic opportunities"],
+        blindSpots: [
+          "May dismiss innovative approaches that lack proven track records",
+          "Could miss the strategic big picture",
+        ],
         recommendations: [
-          "Practice brainstorming without judgement",
-          "Seek out colleagues who think about future possibilities",
+          "Partner with intuitive colleagues for long-range planning",
+          "Practice stepping back to consider broader implications before diving into details",
         ],
       },
       {
@@ -258,26 +264,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Sensing",
         description:
-          "You strongly prefer the concrete and factual. You excel at observing details, recalling specifics, and implementing proven methods. Abstract theories without practical application feel unsatisfying.",
+          "You have a strong preference for concrete reality. You trust what you can see, touch, and verify, and you excel at working with precise data and established procedures. You are the person others turn to for accurate, reliable, and practical work.",
         strengths: [
-          "Meticulous accuracy",
-          "Strong implementation skills",
-          "Trusted for factual reliability",
-          "Excellent memory for specifics",
+          "Exceptionally detail-oriented",
+          "Masters established procedures quickly",
+          "Produces highly accurate work",
         ],
         blindSpots: [
-          "May dismiss innovative ideas too quickly",
-          "Can get lost in details and miss the big picture",
-          "May resist change that lacks proven track record",
+          "May resist change or unproven approaches",
+          "Could become frustrated with ambiguity and vagueness",
         ],
         recommendations: [
-          "Challenge yourself to consider 'what if' scenarios",
-          "Partner with intuitive colleagues on strategy projects",
-          "Practise looking at data for emerging patterns, not just current facts",
+          "Challenge yourself to consider 'what if' scenarios alongside 'what is'",
+          "Seek exposure to strategic planning exercises to broaden your perspective",
         ],
       },
     ],
   },
+
+  // ── Intuition ─────────────────────────────────────────────────────────────
   {
     dimensionKey: "N",
     ranges: [
@@ -286,27 +291,29 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Intuition",
         description:
-          "You have a mild preference for intuition. You enjoy exploring ideas but stay grounded in practical considerations.",
-        strengths: ["Creative yet practical", "Open to new possibilities"],
-        blindSpots: ["May not follow through on all ideas"],
-        recommendations: ["Balance creative thinking with actionable plans"],
+          "You show a mild preference for seeing patterns and possibilities beyond the immediate facts. While you can work with concrete data, you are slightly more drawn to exploring ideas and future potential.",
+        strengths: ["Open to new ideas with a practical foundation", "Flexible perspective"],
+        blindSpots: ["May not fully trust your intuitive insights"],
+        recommendations: ["Give your intuitive hunches space alongside your factual analysis"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Intuition",
         description:
-          "You clearly prefer working with patterns, possibilities, and the big picture. You enjoy exploring new concepts and are drawn to innovation. You see connections others might miss.",
+          "You have a clear preference for working with patterns, possibilities, and the big picture. You enjoy exploring new ideas, making connections between seemingly unrelated concepts, and imagining future scenarios. You bring a creative, forward-thinking perspective to your work.",
         strengths: [
-          "Strategic thinker",
-          "Sees patterns and connections",
-          "Innovative problem-solver",
-          "Future-oriented",
+          "Creative and innovative thinker",
+          "Strong at strategic planning",
+          "Sees connections others miss",
         ],
-        blindSpots: ["May overlook important details", "Can be impatient with routine work"],
+        blindSpots: [
+          "May overlook important details in pursuit of the big picture",
+          "Could frustrate detail-oriented colleagues",
+        ],
         recommendations: [
-          "Partner with detail-oriented colleagues for implementation",
-          "Ground your visions in specific action steps",
+          "Pair your visions with concrete action steps",
+          "Collaborate with sensing types to ensure practical feasibility",
         ],
       },
       {
@@ -314,26 +321,22 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Intuition",
         description:
-          "You strongly prefer the world of ideas, patterns, and possibilities. You are a natural visionary who sees potential everywhere. You may find routine and detail work draining.",
+          "You have a strong preference for the world of possibilities and abstractions. You are a natural visionary who thrives on innovation, conceptual thinking, and exploring uncharted territory. You quickly grasp complex systems and enjoy working at the frontier of ideas.",
         strengths: [
-          "Visionary thinking",
-          "Exceptional pattern recognition",
-          "Natural innovator",
-          "Inspires others with possibilities",
+          "Visionary and future-oriented",
+          "Exceptional at pattern recognition",
+          "Thrives on complexity and innovation",
         ],
-        blindSpots: [
-          "May neglect practical implementation",
-          "Can overwhelm others with too many ideas",
-          "May lose interest after the conceptual phase",
-        ],
+        blindSpots: ["May struggle with routine, detail-heavy tasks", "Could overlook practical constraints"],
         recommendations: [
-          "Develop systems for follow-through",
-          "Find an execution partner for your ideas",
-          "Practice staying present with current realities before jumping to future possibilities",
+          "Develop systems for managing necessary details without draining your energy",
+          "Ground your ideas with data and evidence when presenting to stakeholders",
         ],
       },
     ],
   },
+
+  // ── Thinking ──────────────────────────────────────────────────────────────
   {
     dimensionKey: "T",
     ranges: [
@@ -342,27 +345,29 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Thinking",
         description:
-          "You have a mild preference for logical analysis in decision-making while still considering personal impact.",
-        strengths: ["Balanced decision-making", "Can be both analytical and empathetic"],
-        blindSpots: ["May take longer to decide when logic and values conflict"],
-        recommendations: ["Trust your analytical instincts on technical decisions"],
+          "You show a mild preference for logical analysis when making decisions. While you consider people's feelings, you lean slightly towards objective criteria and rational evaluation.",
+        strengths: ["Balanced decision-making", "Can consider both logic and values"],
+        blindSpots: ["May not always be clear about which criteria are driving your decisions"],
+        recommendations: ["Be explicit about your reasoning to help others understand your decisions"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Thinking",
         description:
-          "You clearly prefer to make decisions based on logic, data, and objective analysis. You value fairness through consistent principles and can make tough calls when needed.",
+          "You have a clear preference for making decisions based on logic, analysis, and objective principles. You value fairness, consistency, and truth, and you are comfortable making tough calls when the evidence supports them. You bring analytical rigour and clarity to complex decisions.",
         strengths: [
-          "Objective decision-maker",
-          "Strong analytical skills",
-          "Consistent and fair",
-          "Handles tough decisions well",
+          "Objective and analytical",
+          "Fair and consistent decision-maker",
+          "Comfortable with difficult decisions",
         ],
-        blindSpots: ["May seem insensitive to others' feelings", "Could undervalue relationship dynamics"],
+        blindSpots: [
+          "May undervalue the emotional impact of decisions",
+          "Could be perceived as cold or impersonal",
+        ],
         recommendations: [
-          "Consider the human impact of your decisions",
-          "Acknowledge others' feelings before presenting your analysis",
+          "Acknowledge the human side of decisions even when the logic is clear",
+          "Practice communicating decisions with empathy",
         ],
       },
       {
@@ -370,26 +375,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Thinking",
         description:
-          "You strongly prefer logical, analytical decision-making. You excel at identifying flaws in reasoning and maintaining objectivity under pressure. Emotional arguments may frustrate you.",
+          "You have a strong preference for logical, principle-based decision-making. You are highly analytical, value intellectual honesty above social harmony, and are willing to challenge popular positions when the evidence warrants it. You excel in roles requiring critical evaluation and strategic analysis.",
         strengths: [
-          "Exceptional analytical rigour",
-          "Calm under pressure",
-          "Identifies logical flaws quickly",
-          "Makes principled decisions",
+          "Exceptional analytical skills",
+          "Intellectually honest and principled",
+          "Excels at strategic and critical thinking",
         ],
         blindSpots: [
-          "May alienate colleagues with blunt feedback",
-          "Can dismiss emotional concerns as irrational",
-          "May create conflict by prioritising logic over harmony",
+          "May alienate colleagues with blunt directness",
+          "Could dismiss emotional intelligence as irrelevant",
         ],
         recommendations: [
-          "Lead with appreciation before critique",
-          "Learn to translate logical conclusions into emotionally intelligent communication",
-          "Recognise that values-based decisions are valid even if not purely logical",
+          "Invest in developing your emotional intelligence alongside your analytical skills",
+          "Frame logical conclusions in terms that acknowledge their impact on people",
         ],
       },
     ],
   },
+
+  // ── Feeling ───────────────────────────────────────────────────────────────
   {
     dimensionKey: "F",
     ranges: [
@@ -398,27 +402,26 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Feeling",
         description:
-          "You have a mild preference for values-based decision-making while maintaining analytical objectivity when needed.",
-        strengths: ["Considerate yet objective", "Balances empathy with logic"],
-        blindSpots: ["May struggle when values and data conflict"],
-        recommendations: ["Trust your instinct to consider people impact"],
+          "You show a mild preference for considering values and people's feelings when making decisions. While you can be logical, you lean slightly towards empathy and interpersonal harmony.",
+        strengths: ["Balanced sensitivity to logic and values", "Approachable decision-maker"],
+        blindSpots: ["May not always recognise when your values are influencing your reasoning"],
+        recommendations: ["Reflect on whether your decisions are driven by logic, values, or both"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Feeling",
         description:
-          "You clearly prefer to make decisions based on values, personal impact, and maintaining harmony. You are skilled at reading others' emotions and creating inclusive environments.",
+          "You have a clear preference for making decisions based on personal values, empathy, and the impact on people. You are skilled at reading social dynamics and creating harmony within teams. You naturally consider how decisions will affect individuals and relationships.",
         strengths: [
-          "Empathetic leader",
-          "Creates team harmony",
-          "Values-driven decisions",
-          "Skilled at reading people",
+          "Empathetic and people-oriented",
+          "Builds team cohesion",
+          "Skilled at conflict resolution",
         ],
-        blindSpots: ["May avoid necessary confrontation", "Could take criticism personally"],
+        blindSpots: ["May avoid necessary but unpopular decisions", "Could take criticism personally"],
         recommendations: [
-          "Practise giving constructive feedback directly",
-          "Separate personal feelings from professional critique",
+          "Develop comfort with making tough decisions that serve the greater good",
+          "Separate personal worth from professional feedback",
         ],
       },
       {
@@ -426,26 +429,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Feeling",
         description:
-          "You strongly prefer values-based, people-centred decision-making. You are deeply attuned to others' needs and create warm, supportive environments. Purely impersonal decisions feel wrong to you.",
+          "You have a strong preference for values-based, people-centred decision-making. You are deeply empathetic, attuned to others' emotions, and driven to create positive human outcomes. You excel at building trust, resolving conflict, and fostering inclusive environments.",
         strengths: [
-          "Deeply empathetic",
-          "Creates psychological safety",
-          "Inspires loyalty",
-          "Champions team wellbeing",
+          "Deeply empathetic and compassionate",
+          "Exceptional relationship builder",
+          "Creates psychologically safe environments",
         ],
         blindSpots: [
-          "May avoid tough decisions that could upset people",
-          "Can be perceived as biased toward favourites",
-          "May sacrifice efficiency for harmony",
+          "May struggle with decisions that benefit the organisation but hurt individuals",
+          "Could become overwhelmed by absorbing others' emotions",
         ],
         recommendations: [
-          "Develop comfort with healthy conflict",
-          "Practise using data to support your values-based recommendations",
-          "Set boundaries to avoid emotional exhaustion",
+          "Set emotional boundaries to protect your energy",
+          "Partner with thinking types to ensure objectivity in high-stakes decisions",
         ],
       },
     ],
   },
+
+  // ── Judging ───────────────────────────────────────────────────────────────
   {
     dimensionKey: "J",
     ranges: [
@@ -454,27 +456,29 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 2,
         label: "Slight Judging",
         description:
-          "You have a mild preference for structure and planning while maintaining some flexibility.",
-        strengths: ["Organised yet adaptable", "Can plan and pivot as needed"],
-        blindSpots: ["May sometimes over-plan simple tasks"],
-        recommendations: ["Use your planning skills for complex projects, stay loose for simple ones"],
+          "You show a mild preference for structure and planning. While you can adapt to change, you slightly prefer having a plan and knowing what to expect.",
+        strengths: [
+          "Flexible but leans towards organisation",
+          "Comfortable with both planned and spontaneous approaches",
+        ],
+        blindSpots: ["May not consistently enforce the structure you prefer"],
+        recommendations: ["Use light planning frameworks that provide structure without rigidity"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Judging",
         description:
-          "You clearly prefer structure, planning, and decisive action. You like to know what to expect and feel most productive when working from a clear plan with defined milestones.",
+          "You have a clear preference for structure, planning, and closure. You like to make decisions, set schedules, and work systematically towards goals. You are reliable, organised, and bring a sense of order and predictability to your work environment.",
         strengths: [
-          "Excellent planner",
-          "Reliable and punctual",
-          "Decisive",
-          "Follows through on commitments",
+          "Well-organised and reliable",
+          "Good at planning and meeting deadlines",
+          "Provides structure for teams",
         ],
-        blindSpots: ["May be inflexible when plans change", "Could make decisions too quickly"],
+        blindSpots: ["May become rigid when plans need to change", "Could rush decisions to achieve closure"],
         recommendations: [
           "Build buffer time into plans for unexpected changes",
-          "Practice sitting with ambiguity before deciding",
+          "Practice sitting with ambiguity before forcing a decision",
         ],
       },
       {
@@ -482,26 +486,25 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Judging",
         description:
-          "You strongly prefer structure, closure, and decisive action. You are highly organised and may feel stressed by ambiguity or last-minute changes. You are the person who makes things happen on time.",
+          "You have a strong preference for a structured, decided, and organised lifestyle. You thrive when there is a clear plan, established deadlines, and predictable routines. You are exceptionally reliable and bring strong project management instincts to every endeavour.",
         strengths: [
-          "Exceptional organiser",
-          "Drives projects to completion",
-          "Creates clarity from chaos",
-          "Dependable and consistent",
+          "Exceptionally organised and dependable",
+          "Strong project management instincts",
+          "Drives teams to completion",
         ],
         blindSpots: [
-          "May resist necessary pivots",
-          "Can seem controlling or rigid",
-          "May close down options too early",
+          "May become stressed or controlling when things deviate from the plan",
+          "Could miss opportunities that arise from spontaneity",
         ],
         recommendations: [
-          "Practice 'good enough' instead of perfect",
-          "Leave decisions open longer on complex issues",
-          "Learn to see last-minute changes as opportunities, not threats",
+          "Schedule intentional unstructured time to foster flexibility",
+          "Practice responding to change with curiosity rather than frustration",
         ],
       },
     ],
   },
+
+  // ── Perceiving ────────────────────────────────────────────────────────────
   {
     dimensionKey: "P",
     ranges: [
@@ -509,27 +512,30 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         min: 0,
         max: 2,
         label: "Slight Perceiving",
-        description: "You have a mild preference for flexibility while appreciating some structure.",
-        strengths: ["Adaptable with some discipline", "Open to change"],
-        blindSpots: ["May occasionally procrastinate"],
-        recommendations: ["Use light structure (checklists) to stay on track"],
+        description:
+          "You show a mild preference for flexibility and keeping options open. While you can follow plans, you slightly prefer environments that allow for spontaneity and adaptation.",
+        strengths: ["Adaptable with some appreciation for structure", "Open to emerging opportunities"],
+        blindSpots: ["May procrastinate when structure would help"],
+        recommendations: ["Use deadlines as helpful guardrails rather than constraints"],
       },
       {
         min: 3,
         max: 5,
         label: "Moderate Perceiving",
         description:
-          "You clearly prefer flexibility, spontaneity, and keeping options open. You work well under pressure and enjoy adapting to new information. Rigid schedules feel constraining.",
+          "You have a clear preference for flexibility, spontaneity, and keeping your options open. You enjoy exploring possibilities, adapting to new information, and maintaining the freedom to change course. You bring an energising sense of openness and curiosity to your teams.",
         strengths: [
-          "Highly adaptable",
-          "Thrives under pressure",
-          "Open to new information",
-          "Flexible problem-solver",
+          "Adaptable and flexible",
+          "Comfortable with ambiguity",
+          "Curious and open to new information",
         ],
-        blindSpots: ["May procrastinate on routine tasks", "Could miss deadlines without external structure"],
+        blindSpots: [
+          "May struggle to meet deadlines or finalise decisions",
+          "Could leave too many things open-ended",
+        ],
         recommendations: [
-          "Use minimal structure (weekly goals, not hourly schedules)",
-          "Set personal deadlines ahead of actual deadlines",
+          "Set personal mini-deadlines within larger projects",
+          "Practice making and committing to decisions even when not all information is available",
         ],
       },
       {
@@ -537,29 +543,26 @@ export const MYERS_BRIGGS_INTERPRETATIONS: TAssessmentTemplatePreset["interpreta
         max: 8,
         label: "Strong Perceiving",
         description:
-          "You strongly prefer an open, flexible approach to life and work. You are energised by spontaneity and new possibilities. Fixed plans and rigid schedules feel suffocating.",
+          "You have a strong preference for an open, flexible, and spontaneous approach to life and work. You thrive in dynamic environments, excel at last-minute improvisation, and resist rigid structures. You are at your creative best when given freedom to explore and adapt.",
         strengths: [
-          "Maximum adaptability",
-          "Excellent in crisis situations",
-          "Sees opportunities others miss",
-          "Comfortable with uncertainty",
+          "Highly adaptable and resourceful",
+          "Excellent improviser",
+          "Thrives in dynamic, fast-changing environments",
         ],
         blindSpots: [
-          "May chronically procrastinate",
-          "Can frustrate structure-oriented colleagues",
-          "May leave projects unfinished when something more interesting appears",
+          "May chronically underestimate the time tasks require",
+          "Could frustrate structure-oriented colleagues",
         ],
         recommendations: [
-          "Partner with a J-type colleague for project management",
-          "Use the 'two-minute rule' — if it takes less than two minutes, do it now",
-          "Commit to finishing one thing before starting the next",
+          "Partner with judging types for projects requiring detailed planning",
+          "Develop a minimal personal organisational system that respects your need for flexibility",
         ],
       },
     ],
   },
 ];
 
-export const MYERS_BRIGGS_REPORT_CONFIG: TAssessmentTemplatePreset["reportConfig"] = {
+export const MBTI_REPORT_CONFIG: TAssessmentTemplatePreset["reportConfig"] = {
   title: "Myers-Briggs Type Indicator Report",
   subtitle: "Your 4-letter personality type and what it means",
   showRadarChart: true,
@@ -575,260 +578,269 @@ export const MYERS_BRIGGS_REPORT_CONFIG: TAssessmentTemplatePreset["reportConfig
   },
 };
 
-export const MYERS_BRIGGS_SCORING_RULES: TAssessmentTemplatePreset["scoringRules"] = {
+export const MBTI_SCORING_RULES: TAssessmentTemplatePreset["scoringRules"] = {
   method: "ipsative",
   normalizeToPercentage: true,
 };
 
-export const MYERS_BRIGGS_ASSESSMENT_PRESET: TAssessmentTemplatePreset = {
+export const MBTI_ASSESSMENT_PRESET: TAssessmentTemplatePreset = {
   type: "myersBriggs",
-  dimensions: MYERS_BRIGGS_DIMENSIONS,
-  interpretations: MYERS_BRIGGS_INTERPRETATIONS,
-  reportConfig: MYERS_BRIGGS_REPORT_CONFIG,
-  scoringRules: MYERS_BRIGGS_SCORING_RULES,
+  dimensions: MBTI_DIMENSIONS,
+  interpretations: MBTI_INTERPRETATIONS,
+  reportConfig: MBTI_REPORT_CONFIG,
+  scoringRules: MBTI_SCORING_RULES,
 };
 
 /**
- * MBTI questions — 32 forced-choice questions (8 per dichotomy pair).
- * Each question has exactly 2 options. The first maps to dims[0], the second to dims[1].
+ * MBTI survey questions.
+ *
+ * Each question presents two options representing opposite poles of a dichotomy.
+ * The `dims` array indicates which dimension each option maps to:
+ *   dims[0] = dimension for the first option
+ *   dims[1] = dimension for the second option
+ *
+ * The block logic adds 1 point to the selected dimension's variable.
  */
-export const MYERS_BRIGGS_QUESTIONS = [
-  // E/I pair (8 questions)
+export const MBTI_QUESTIONS: { q: string; options: [string, string]; dims: [string, string] }[] = [
+  // E/I pair
   {
-    q: "At a work event, I prefer to:",
+    q: "At a work event, I prefer to...",
     options: [
-      "Talk to many different people and work the room",
-      "Have a few deep conversations with people I know well",
+      "Talk to many different people and circulate the room",
+      "Have deep conversations with a few people I know well",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "After a long day of meetings, I recharge by:",
+    q: "After a long day of meetings, I recharge by...",
     options: [
       "Going out with colleagues for dinner or drinks",
-      "Spending quiet time alone or with one close person",
+      "Spending quiet time alone or with one close friend",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "When brainstorming, I work best by:",
+    q: "When brainstorming ideas, I work best by...",
+    options: ["Discussing ideas out loud with a group", "Thinking things through quietly on my own first"],
+    dims: ["E", "I"],
+  },
+  {
+    q: "In my ideal role, I would spend most of my time...",
     options: [
-      "Talking ideas through with the group in real time",
-      "Reflecting on my own first, then sharing my best ideas",
+      "Collaborating face-to-face with team members and clients",
+      "Working independently on focused, in-depth tasks",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "In my ideal role, I would:",
+    q: "When solving a difficult problem, I tend to...",
     options: [
-      "Interact with many people throughout the day",
-      "Have long stretches of focused, uninterrupted work",
+      "Talk it through with others to clarify my thinking",
+      "Reflect on it privately before sharing my conclusions",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "When solving a problem, I tend to:",
+    q: "I am energised most by...",
     options: [
-      "Think out loud and bounce ideas off others",
-      "Quietly work through it in my head before sharing",
+      "Being in a lively environment with lots of interaction",
+      "Having uninterrupted time to concentrate deeply",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "I find energy in:",
+    q: "When learning something new, I prefer to...",
     options: [
-      "A bustling open office with lots of activity",
-      "A quiet private workspace with minimal interruptions",
+      "Jump into group activities and learn by doing with others",
+      "Study the material on my own and process it internally",
     ],
     dims: ["E", "I"],
   },
   {
-    q: "When meeting someone new, I typically:",
+    q: "People who know me well would say I am...",
     options: [
-      "Initiate conversation and share about myself freely",
-      "Wait for them to approach and reveal myself gradually",
-    ],
-    dims: ["E", "I"],
-  },
-  {
-    q: "My communication style is more:",
-    options: [
-      "Expressive and immediate — I share thoughts as they come",
-      "Reserved and considered — I choose my words carefully",
+      "Outgoing, talkative, and easy to get to know",
+      "Private, thoughtful, and harder to read at first",
     ],
     dims: ["E", "I"],
   },
 
-  // S/N pair (8 questions)
+  // S/N pair
   {
-    q: "When learning something new, I prefer:",
+    q: "I trust...",
+    options: ["Concrete facts and direct experience", "Intuition and patterns I sense beneath the surface"],
+    dims: ["S", "N"],
+  },
+  {
+    q: "When reading a report, I focus on...",
     options: [
-      "Step-by-step instructions with concrete examples",
-      "An overview of the concept so I can figure out the details myself",
+      "The specific data, figures, and evidence presented",
+      "The overarching themes, implications, and possibilities",
     ],
     dims: ["S", "N"],
   },
   {
-    q: "I trust:",
-    options: ["Proven methods and direct experience", "My intuition and gut feeling about possibilities"],
-    dims: ["S", "N"],
-  },
-  {
-    q: "In a project debrief, I focus on:",
-    options: [
-      "What specifically happened and what the data shows",
-      "What the results mean for the bigger picture and future direction",
-    ],
-    dims: ["S", "N"],
-  },
-  {
-    q: "I am more interested in:",
+    q: "I am more interested in...",
     options: ["What is real and actual right now", "What could be possible in the future"],
     dims: ["S", "N"],
   },
   {
-    q: "When reading a report, I pay most attention to:",
-    options: ["The specific facts, figures, and data points", "The themes, patterns, and implications"],
-    dims: ["S", "N"],
-  },
-  {
-    q: "I would describe myself as more:",
-    options: ["Practical and down-to-earth", "Imaginative and theoretical"],
-    dims: ["S", "N"],
-  },
-  {
-    q: "When giving directions, I prefer to:",
+    q: "When describing an event to a colleague, I tend to...",
     options: [
-      "Give specific, detailed step-by-step instructions",
-      "Describe the general destination and let them find their way",
+      "Relay the facts in a sequential, step-by-step way",
+      "Share the overall impression and what it could mean",
     ],
     dims: ["S", "N"],
   },
   {
-    q: "I get frustrated when people:",
+    q: "I prefer work that involves...",
     options: [
-      "Jump to conclusions without checking the facts",
-      "Get bogged down in details and miss the bigger opportunity",
+      "Applying established methods to produce tangible results",
+      "Exploring new concepts and developing innovative strategies",
     ],
+    dims: ["S", "N"],
+  },
+  {
+    q: "When making a plan, I start with...",
+    options: [
+      "Concrete details and practical logistics",
+      "The big picture vision and then work out the details later",
+    ],
+    dims: ["S", "N"],
+  },
+  {
+    q: "I value colleagues who are...",
+    options: [
+      "Realistic, practical, and grounded in experience",
+      "Visionary, creative, and open to unconventional ideas",
+    ],
+    dims: ["S", "N"],
+  },
+  {
+    q: "When given instructions, I prefer them to be...",
+    options: ["Clear, specific, and step-by-step", "General guidelines that leave room for interpretation"],
     dims: ["S", "N"],
   },
 
-  // T/F pair (8 questions)
+  // T/F pair
   {
-    q: "When making a difficult decision, I rely more on:",
-    options: ["Logical analysis and objective criteria", "How the decision will affect the people involved"],
+    q: "When making decisions, I rely more on...",
+    options: ["Logic and objective analysis", "Values and how people will be affected"],
     dims: ["T", "F"],
   },
   {
-    q: "When giving feedback, I prioritise:",
+    q: "When giving feedback, I prioritise...",
     options: [
-      "Being truthful and direct, even if it stings",
-      "Being tactful and encouraging, even if I soften the message",
+      "Being honest and accurate, even if it is uncomfortable",
+      "Being tactful and considerate of the person's feelings",
     ],
     dims: ["T", "F"],
   },
   {
-    q: "In a disagreement, I am more likely to:",
-    options: ["Focus on who has the stronger argument", "Focus on how to restore harmony and understanding"],
-    dims: ["T", "F"],
-  },
-  {
-    q: "I believe fairness means:",
+    q: "In a disagreement, I tend to...",
     options: [
-      "Treating everyone by the same objective standard",
-      "Considering each person's unique circumstances",
+      "Focus on the logical merits of each position",
+      "Consider how the outcome will affect relationships and morale",
     ],
     dims: ["T", "F"],
   },
   {
-    q: "I am more impressed by:",
+    q: "I am more persuaded by...",
     options: [
-      "A well-reasoned argument backed by evidence",
-      "A heartfelt appeal that connects with shared values",
+      "A well-structured argument supported by evidence",
+      "A compelling story about the human impact",
     ],
     dims: ["T", "F"],
   },
   {
-    q: "When a colleague makes a mistake, my first instinct is to:",
+    q: "When evaluating a proposal, I first consider...",
     options: [
-      "Analyse what went wrong and how to fix the process",
-      "Consider how they are feeling and offer support",
+      "Whether it is logically sound and cost-effective",
+      "Whether it aligns with our values and supports the team",
     ],
     dims: ["T", "F"],
   },
   {
-    q: "I would rather be known as:",
-    options: ["Competent and logical", "Compassionate and understanding"],
+    q: "I would rather be known as...",
+    options: ["Fair and competent", "Compassionate and understanding"],
     dims: ["T", "F"],
   },
   {
-    q: "When evaluating a proposal, I weigh:",
+    q: "When a colleague is underperforming, I first think about...",
     options: [
-      "The data, costs, and logical consistency",
-      "The impact on team morale and alignment with our values",
+      "The objective standards they are failing to meet",
+      "What personal challenges they might be facing",
+    ],
+    dims: ["T", "F"],
+  },
+  {
+    q: "I find it easier to...",
+    options: [
+      "Analyse the pros and cons of a situation objectively",
+      "Tune into how a situation is affecting people emotionally",
     ],
     dims: ["T", "F"],
   },
 
-  // J/P pair (8 questions)
+  // J/P pair
   {
-    q: "I prefer my work environment to be:",
+    q: "I prefer my work environment to be...",
+    options: ["Structured, planned, and predictable", "Flexible, spontaneous, and open to change"],
+    dims: ["J", "P"],
+  },
+  {
+    q: "When starting a project, I prefer to...",
     options: [
-      "Structured with clear expectations and deadlines",
-      "Flexible with room to adapt as things evolve",
+      "Create a detailed plan with milestones and deadlines",
+      "Explore options and let the approach evolve naturally",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "When planning a project, I:",
-    options: ["Create a detailed plan before starting work", "Dive in and adjust the plan as I learn more"],
-    dims: ["J", "P"],
-  },
-  {
-    q: "Regarding deadlines, I typically:",
+    q: "I feel most comfortable when...",
     options: [
-      "Finish well ahead of time so I can relax",
-      "Work best with the energy of an approaching deadline",
+      "Decisions are made and I know what to expect",
+      "Options are still open and I can adapt as I go",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "I feel more comfortable when:",
+    q: "My desk and workspace tend to be...",
     options: [
-      "A decision has been made and we can move forward",
-      "Options are still open and we can gather more information",
+      "Neat, organised, and everything in its place",
+      "A creative spread of current projects and materials",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "My desk or workspace tends to be:",
+    q: "When a deadline is approaching, I typically...",
     options: [
-      "Organised with everything in its place",
-      "A creative workspace with multiple things in progress",
+      "Have completed most of the work well in advance",
+      "Do my best work in a final burst of energy close to the deadline",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "When plans change unexpectedly, I:",
+    q: "I prefer to handle tasks by...",
     options: [
-      "Feel stressed and want to re-establish a new plan quickly",
-      "Feel energised by the new possibilities this opens up",
+      "Finishing one thing completely before moving to the next",
+      "Working on several things at once and keeping my options open",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "I prefer to:",
+    q: "When plans change unexpectedly, I...",
     options: [
-      "Make a to-do list and check items off systematically",
-      "Keep things flexible and respond to whatever feels most important",
+      "Feel frustrated and prefer to get back on track quickly",
+      "See it as an opportunity and adapt easily",
     ],
     dims: ["J", "P"],
   },
   {
-    q: "On holiday, I prefer:",
+    q: "In my personal life, I tend to...",
     options: [
-      "A planned itinerary with reservations and schedules",
-      "A loose plan that allows spontaneous exploration",
+      "Plan activities and trips well in advance",
+      "Decide things in the moment and stay spontaneous",
     ],
     dims: ["J", "P"],
   },
@@ -837,7 +849,7 @@ export const MYERS_BRIGGS_QUESTIONS = [
 /**
  * Generate survey variables for the MBTI template.
  */
-export function getMyersBriggsSurveyVariables() {
+export function getMbtiSurveyVariables() {
   return [
     { id: VAR_E, name: "mb_e", type: "number" as const, value: 0 },
     { id: VAR_I, name: "mb_i", type: "number" as const, value: 0 },
@@ -851,9 +863,9 @@ export function getMyersBriggsSurveyVariables() {
 }
 
 /**
- * Map a dimension key to its variable ID.
+ * Map an MBTI dimension key to its survey variable ID.
  */
-export function getVariableIdForDimension(dim: string): string {
+export function getVariableIdForDimension(dim: "E" | "I" | "S" | "N" | "T" | "F" | "J" | "P"): string {
   const map: Record<string, string> = {
     E: VAR_E,
     I: VAR_I,
@@ -864,5 +876,5 @@ export function getVariableIdForDimension(dim: string): string {
     J: VAR_J,
     P: VAR_P,
   };
-  return map[dim] ?? dim;
+  return map[dim];
 }
