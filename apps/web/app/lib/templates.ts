@@ -11813,6 +11813,1565 @@ const diversityRecruitingEffectivenessSurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const preboardingSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.preboarding_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.preboarding_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.preboarding_survey_question_1_headline"),
+              lowerLabel: t("templates.preboarding_survey_question_1_lower_label"),
+              upperLabel: t("templates.preboarding_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.preboarding_survey_question_2_headline"),
+              lowerLabel: t("templates.preboarding_survey_question_2_lower_label"),
+              upperLabel: t("templates.preboarding_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.preboarding_survey_question_3_headline"),
+              lowerLabel: t("templates.preboarding_survey_question_3_lower_label"),
+              upperLabel: t("templates.preboarding_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.preboarding_survey_question_4_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.preboarding_survey_question_4_choice_1"),
+                t("templates.preboarding_survey_question_4_choice_2"),
+                t("templates.preboarding_survey_question_4_choice_3"),
+                t("templates.preboarding_survey_question_4_choice_4"),
+                t("templates.preboarding_survey_question_4_choice_5"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.preboarding_survey_question_5_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.preboarding_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const dayOneFirstDaySurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.day_one_first_day_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.day_one_first_day_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.day_one_first_day_survey_question_1_headline"),
+              lowerLabel: t("templates.day_one_first_day_survey_question_1_lower_label"),
+              upperLabel: t("templates.day_one_first_day_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.day_one_first_day_survey_question_2_headline"),
+              lowerLabel: t("templates.day_one_first_day_survey_question_2_lower_label"),
+              upperLabel: t("templates.day_one_first_day_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.day_one_first_day_survey_question_3_headline"),
+              lowerLabel: t("templates.day_one_first_day_survey_question_3_lower_label"),
+              upperLabel: t("templates.day_one_first_day_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.day_one_first_day_survey_question_4_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.day_one_first_day_survey_question_4_choice_1"),
+                t("templates.day_one_first_day_survey_question_4_choice_2"),
+                t("templates.day_one_first_day_survey_question_4_choice_3"),
+                t("templates.day_one_first_day_survey_question_4_choice_4"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.day_one_first_day_survey_question_5_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const onboarding7DaySurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.onboarding_7_day_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.onboarding_7_day_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.onboarding_7_day_survey_question_1_headline"),
+              lowerLabel: t("templates.onboarding_7_day_survey_question_1_lower_label"),
+              upperLabel: t("templates.onboarding_7_day_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.onboarding_7_day_survey_question_2_headline"),
+              lowerLabel: t("templates.onboarding_7_day_survey_question_2_lower_label"),
+              upperLabel: t("templates.onboarding_7_day_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.onboarding_7_day_survey_question_3_headline"),
+              lowerLabel: t("templates.onboarding_7_day_survey_question_3_lower_label"),
+              upperLabel: t("templates.onboarding_7_day_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.onboarding_7_day_survey_question_4_headline"),
+              lowerLabel: t("templates.onboarding_7_day_survey_question_4_lower_label"),
+              upperLabel: t("templates.onboarding_7_day_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.onboarding_7_day_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.onboarding_7_day_survey_question_5_choice_1"),
+                t("templates.onboarding_7_day_survey_question_5_choice_2"),
+                t("templates.onboarding_7_day_survey_question_5_choice_3"),
+                t("templates.onboarding_7_day_survey_question_5_choice_4"),
+                t("templates.onboarding_7_day_survey_question_5_choice_5"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.onboarding_7_day_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const sixMonthNewHireCheckIn = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.six_month_new_hire_check_in_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.six_month_new_hire_check_in_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.six_month_new_hire_check_in_question_1_headline"),
+              lowerLabel: t("templates.six_month_new_hire_check_in_question_1_lower_label"),
+              upperLabel: t("templates.six_month_new_hire_check_in_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.six_month_new_hire_check_in_question_2_headline"),
+              lowerLabel: t("templates.six_month_new_hire_check_in_question_2_lower_label"),
+              upperLabel: t("templates.six_month_new_hire_check_in_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.six_month_new_hire_check_in_question_3_headline"),
+              lowerLabel: t("templates.six_month_new_hire_check_in_question_3_lower_label"),
+              upperLabel: t("templates.six_month_new_hire_check_in_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.six_month_new_hire_check_in_question_4_headline"),
+              lowerLabel: t("templates.six_month_new_hire_check_in_question_4_lower_label"),
+              upperLabel: t("templates.six_month_new_hire_check_in_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.six_month_new_hire_check_in_question_5_headline"),
+              lowerLabel: t("templates.six_month_new_hire_check_in_question_5_lower_label"),
+              upperLabel: t("templates.six_month_new_hire_check_in_question_5_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.six_month_new_hire_check_in_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.six_month_new_hire_check_in_question_6_choice_1"),
+                t("templates.six_month_new_hire_check_in_question_6_choice_2"),
+                t("templates.six_month_new_hire_check_in_question_6_choice_3"),
+                t("templates.six_month_new_hire_check_in_question_6_choice_4"),
+                t("templates.six_month_new_hire_check_in_question_6_choice_5"),
+                t("templates.six_month_new_hire_check_in_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.six_month_new_hire_check_in_question_7_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const probationEndSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.probation_end_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.probation_end_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.probation_end_survey_question_1_headline"),
+              lowerLabel: t("templates.probation_end_survey_question_1_lower_label"),
+              upperLabel: t("templates.probation_end_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.probation_end_survey_question_2_headline"),
+              lowerLabel: t("templates.probation_end_survey_question_2_lower_label"),
+              upperLabel: t("templates.probation_end_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.probation_end_survey_question_3_headline"),
+              lowerLabel: t("templates.probation_end_survey_question_3_lower_label"),
+              upperLabel: t("templates.probation_end_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.probation_end_survey_question_4_headline"),
+              lowerLabel: t("templates.probation_end_survey_question_4_lower_label"),
+              upperLabel: t("templates.probation_end_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.probation_end_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.probation_end_survey_question_5_choice_1"),
+                t("templates.probation_end_survey_question_5_choice_2"),
+                t("templates.probation_end_survey_question_5_choice_3"),
+                t("templates.probation_end_survey_question_5_choice_4"),
+                t("templates.probation_end_survey_question_5_choice_5"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.probation_end_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const anniversarySurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.anniversary_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.anniversary_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.anniversary_survey_question_1_headline"),
+              lowerLabel: t("templates.anniversary_survey_question_1_lower_label"),
+              upperLabel: t("templates.anniversary_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.anniversary_survey_question_2_headline"),
+              lowerLabel: t("templates.anniversary_survey_question_2_lower_label"),
+              upperLabel: t("templates.anniversary_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.anniversary_survey_question_3_headline"),
+              lowerLabel: t("templates.anniversary_survey_question_3_lower_label"),
+              upperLabel: t("templates.anniversary_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.anniversary_survey_question_4_headline"),
+              lowerLabel: t("templates.anniversary_survey_question_4_lower_label"),
+              upperLabel: t("templates.anniversary_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildNPSElement({
+              headline: t("templates.anniversary_survey_question_5_headline"),
+              required: true,
+              lowerLabel: t("templates.anniversary_survey_question_5_lower_label"),
+              upperLabel: t("templates.anniversary_survey_question_5_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.anniversary_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.anniversary_survey_question_6_choice_1"),
+                t("templates.anniversary_survey_question_6_choice_2"),
+                t("templates.anniversary_survey_question_6_choice_3"),
+                t("templates.anniversary_survey_question_6_choice_4"),
+                t("templates.anniversary_survey_question_6_choice_5"),
+                t("templates.anniversary_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.anniversary_survey_question_7_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const promotionSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.promotion_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.promotion_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.promotion_survey_question_1_headline"),
+              lowerLabel: t("templates.promotion_survey_question_1_lower_label"),
+              upperLabel: t("templates.promotion_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.promotion_survey_question_2_headline"),
+              lowerLabel: t("templates.promotion_survey_question_2_lower_label"),
+              upperLabel: t("templates.promotion_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.promotion_survey_question_3_headline"),
+              lowerLabel: t("templates.promotion_survey_question_3_lower_label"),
+              upperLabel: t("templates.promotion_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.promotion_survey_question_4_headline"),
+              lowerLabel: t("templates.promotion_survey_question_4_lower_label"),
+              upperLabel: t("templates.promotion_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.promotion_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.promotion_survey_question_5_choice_1"),
+                t("templates.promotion_survey_question_5_choice_2"),
+                t("templates.promotion_survey_question_5_choice_3"),
+                t("templates.promotion_survey_question_5_choice_4"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.promotion_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const internalTransferSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.internal_transfer_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.internal_transfer_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.internal_transfer_survey_question_1_headline"),
+              lowerLabel: t("templates.internal_transfer_survey_question_1_lower_label"),
+              upperLabel: t("templates.internal_transfer_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.internal_transfer_survey_question_2_headline"),
+              lowerLabel: t("templates.internal_transfer_survey_question_2_lower_label"),
+              upperLabel: t("templates.internal_transfer_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.internal_transfer_survey_question_3_headline"),
+              lowerLabel: t("templates.internal_transfer_survey_question_3_lower_label"),
+              upperLabel: t("templates.internal_transfer_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.internal_transfer_survey_question_4_headline"),
+              lowerLabel: t("templates.internal_transfer_survey_question_4_lower_label"),
+              upperLabel: t("templates.internal_transfer_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.internal_transfer_survey_question_5_headline"),
+              lowerLabel: t("templates.internal_transfer_survey_question_5_lower_label"),
+              upperLabel: t("templates.internal_transfer_survey_question_5_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.internal_transfer_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.internal_transfer_survey_question_6_choice_1"),
+                t("templates.internal_transfer_survey_question_6_choice_2"),
+                t("templates.internal_transfer_survey_question_6_choice_3"),
+                t("templates.internal_transfer_survey_question_6_choice_4"),
+                t("templates.internal_transfer_survey_question_6_choice_5"),
+                t("templates.internal_transfer_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.internal_transfer_survey_question_7_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const returnFromLeaveSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.return_from_leave_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.return_from_leave_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.return_from_leave_survey_question_1_headline"),
+              lowerLabel: t("templates.return_from_leave_survey_question_1_lower_label"),
+              upperLabel: t("templates.return_from_leave_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.return_from_leave_survey_question_2_headline"),
+              lowerLabel: t("templates.return_from_leave_survey_question_2_lower_label"),
+              upperLabel: t("templates.return_from_leave_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.return_from_leave_survey_question_3_headline"),
+              lowerLabel: t("templates.return_from_leave_survey_question_3_lower_label"),
+              upperLabel: t("templates.return_from_leave_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.return_from_leave_survey_question_4_headline"),
+              lowerLabel: t("templates.return_from_leave_survey_question_4_lower_label"),
+              upperLabel: t("templates.return_from_leave_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.return_from_leave_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.return_from_leave_survey_question_5_choice_1"),
+                t("templates.return_from_leave_survey_question_5_choice_2"),
+                t("templates.return_from_leave_survey_question_5_choice_3"),
+                t("templates.return_from_leave_survey_question_5_choice_4"),
+                t("templates.return_from_leave_survey_question_5_choice_5"),
+                t("templates.return_from_leave_survey_question_5_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.return_from_leave_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const parentalLeaveSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.parental_leave_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.parental_leave_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.parental_leave_survey_question_1_headline"),
+              lowerLabel: t("templates.parental_leave_survey_question_1_lower_label"),
+              upperLabel: t("templates.parental_leave_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.parental_leave_survey_question_2_headline"),
+              lowerLabel: t("templates.parental_leave_survey_question_2_lower_label"),
+              upperLabel: t("templates.parental_leave_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.parental_leave_survey_question_3_headline"),
+              lowerLabel: t("templates.parental_leave_survey_question_3_lower_label"),
+              upperLabel: t("templates.parental_leave_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.parental_leave_survey_question_4_headline"),
+              lowerLabel: t("templates.parental_leave_survey_question_4_lower_label"),
+              upperLabel: t("templates.parental_leave_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.parental_leave_survey_question_5_headline"),
+              lowerLabel: t("templates.parental_leave_survey_question_5_lower_label"),
+              upperLabel: t("templates.parental_leave_survey_question_5_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.parental_leave_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.parental_leave_survey_question_6_choice_1"),
+                t("templates.parental_leave_survey_question_6_choice_2"),
+                t("templates.parental_leave_survey_question_6_choice_3"),
+                t("templates.parental_leave_survey_question_6_choice_4"),
+                t("templates.parental_leave_survey_question_6_choice_5"),
+                t("templates.parental_leave_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.parental_leave_survey_question_7_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const alumniSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.alumni_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.alumni_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.alumni_survey_question_1_headline"),
+              lowerLabel: t("templates.alumni_survey_question_1_lower_label"),
+              upperLabel: t("templates.alumni_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.alumni_survey_question_2_headline"),
+              lowerLabel: t("templates.alumni_survey_question_2_lower_label"),
+              upperLabel: t("templates.alumni_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.alumni_survey_question_3_headline"),
+              lowerLabel: t("templates.alumni_survey_question_3_lower_label"),
+              upperLabel: t("templates.alumni_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildNPSElement({
+              headline: t("templates.alumni_survey_question_4_headline"),
+              required: true,
+              lowerLabel: t("templates.alumni_survey_question_4_lower_label"),
+              upperLabel: t("templates.alumni_survey_question_4_upper_label"),
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.alumni_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.alumni_survey_question_5_choice_1"),
+                t("templates.alumni_survey_question_5_choice_2"),
+                t("templates.alumni_survey_question_5_choice_3"),
+                t("templates.alumni_survey_question_5_choice_4"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.alumni_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.alumni_survey_question_6_choice_1"),
+                t("templates.alumni_survey_question_6_choice_2"),
+                t("templates.alumni_survey_question_6_choice_3"),
+                t("templates.alumni_survey_question_6_choice_4"),
+                t("templates.alumni_survey_question_6_choice_5"),
+                t("templates.alumni_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.alumni_survey_question_7_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const exitInterviewFollowUpSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.exit_interview_follow_up_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.exit_interview_follow_up_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.exit_interview_follow_up_survey_question_1_headline"),
+              lowerLabel: t("templates.exit_interview_follow_up_survey_question_1_lower_label"),
+              upperLabel: t("templates.exit_interview_follow_up_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.exit_interview_follow_up_survey_question_2_headline"),
+              lowerLabel: t("templates.exit_interview_follow_up_survey_question_2_lower_label"),
+              upperLabel: t("templates.exit_interview_follow_up_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.exit_interview_follow_up_survey_question_3_headline"),
+              lowerLabel: t("templates.exit_interview_follow_up_survey_question_3_lower_label"),
+              upperLabel: t("templates.exit_interview_follow_up_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.exit_interview_follow_up_survey_question_4_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.exit_interview_follow_up_survey_question_4_choice_1"),
+                t("templates.exit_interview_follow_up_survey_question_4_choice_2"),
+                t("templates.exit_interview_follow_up_survey_question_4_choice_3"),
+                t("templates.exit_interview_follow_up_survey_question_4_choice_4"),
+                t("templates.exit_interview_follow_up_survey_question_4_choice_5"),
+                t("templates.exit_interview_follow_up_survey_question_4_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.exit_interview_follow_up_survey_question_5_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const retirementTransitionSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.retirement_transition_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.retirement_transition_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.retirement_transition_survey_question_1_headline"),
+              lowerLabel: t("templates.retirement_transition_survey_question_1_lower_label"),
+              upperLabel: t("templates.retirement_transition_survey_question_1_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.retirement_transition_survey_question_2_headline"),
+              lowerLabel: t("templates.retirement_transition_survey_question_2_lower_label"),
+              upperLabel: t("templates.retirement_transition_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.retirement_transition_survey_question_3_headline"),
+              lowerLabel: t("templates.retirement_transition_survey_question_3_lower_label"),
+              upperLabel: t("templates.retirement_transition_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.retirement_transition_survey_question_4_headline"),
+              lowerLabel: t("templates.retirement_transition_survey_question_4_lower_label"),
+              upperLabel: t("templates.retirement_transition_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.retirement_transition_survey_question_5_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.retirement_transition_survey_question_5_choice_1"),
+                t("templates.retirement_transition_survey_question_5_choice_2"),
+                t("templates.retirement_transition_survey_question_5_choice_3"),
+                t("templates.retirement_transition_survey_question_5_choice_4"),
+                t("templates.retirement_transition_survey_question_5_choice_5"),
+                t("templates.retirement_transition_survey_question_5_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.retirement_transition_survey_question_6_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const offerDeclineSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.offer_decline_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.offer_decline_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.offer_decline_survey_question_1_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.offer_decline_survey_question_1_choice_1"),
+                t("templates.offer_decline_survey_question_1_choice_2"),
+                t("templates.offer_decline_survey_question_1_choice_3"),
+                t("templates.offer_decline_survey_question_1_choice_4"),
+                t("templates.offer_decline_survey_question_1_choice_5"),
+                t("templates.offer_decline_survey_question_1_choice_6"),
+                t("templates.offer_decline_survey_question_1_choice_7"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.offer_decline_survey_question_2_headline"),
+              lowerLabel: t("templates.offer_decline_survey_question_2_lower_label"),
+              upperLabel: t("templates.offer_decline_survey_question_2_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.offer_decline_survey_question_3_headline"),
+              lowerLabel: t("templates.offer_decline_survey_question_3_lower_label"),
+              upperLabel: t("templates.offer_decline_survey_question_3_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.offer_decline_survey_question_4_headline"),
+              lowerLabel: t("templates.offer_decline_survey_question_4_lower_label"),
+              upperLabel: t("templates.offer_decline_survey_question_4_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.offer_decline_survey_question_5_headline"),
+              required: false,
+              inputType: "text",
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -11919,6 +13478,20 @@ export const templates = (t: TFunction): TTemplate[] => [
   inclusiveLeadershipSurvey(t),
   microaggressionsExperienceSurvey(t),
   diversityRecruitingEffectivenessSurvey(t),
+  preboardingSurvey(t),
+  dayOneFirstDaySurvey(t),
+  onboarding7DaySurvey(t),
+  sixMonthNewHireCheckIn(t),
+  probationEndSurvey(t),
+  anniversarySurvey(t),
+  promotionSurvey(t),
+  internalTransferSurvey(t),
+  returnFromLeaveSurvey(t),
+  parentalLeaveSurvey(t),
+  alumniSurvey(t),
+  exitInterviewFollowUpSurvey(t),
+  retirementTransitionSurvey(t),
+  offerDeclineSurvey(t),
   discAssessmentTemplate(t),
   bigFiveAssessmentTemplate(t),
   myersBriggsAssessmentTemplate(t),
