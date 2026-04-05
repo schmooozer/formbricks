@@ -6591,6 +6591,1398 @@ const changeReadinessSurvey = (t: TFunction): TTemplate => {
   );
 };
 
+const managerSupervisor360Survey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.manager_supervisor_360_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.manager_supervisor_360_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_1_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_1_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_2_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_2_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_3_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_3_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_4_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_4_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_5_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_5_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_6_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_6_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_7_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_7_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_7_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_supervisor_360_survey_question_8_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_8_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_8_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_9"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.manager_supervisor_360_survey_question_9_headline"),
+              lowerLabel: t("templates.manager_supervisor_360_survey_question_9_lower_label"),
+              upperLabel: t("templates.manager_supervisor_360_survey_question_9_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_10"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.manager_supervisor_360_survey_question_10_headline"),
+              required: false,
+              placeholder: t("templates.manager_supervisor_360_survey_question_10_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const seniorLeader360Survey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.senior_leader_360_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.senior_leader_360_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_1_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_1_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_2_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_2_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_3_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_3_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_4_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_4_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_5_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_5_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_6_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_6_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_7_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_7_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_7_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.senior_leader_360_survey_question_8_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_8_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_8_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_9"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.senior_leader_360_survey_question_9_headline"),
+              lowerLabel: t("templates.senior_leader_360_survey_question_9_lower_label"),
+              upperLabel: t("templates.senior_leader_360_survey_question_9_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_10"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.senior_leader_360_survey_question_10_headline"),
+              required: false,
+              placeholder: t("templates.senior_leader_360_survey_question_10_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const executiveSuite360Survey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.executive_suite_360_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.executive_suite_360_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_1_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_1_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_2_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_2_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_3_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_3_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_4_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_4_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_5_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_5_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_6_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_6_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_7_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_7_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_7_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.executive_suite_360_survey_question_8_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_8_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_8_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_9"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.executive_suite_360_survey_question_9_headline"),
+              lowerLabel: t("templates.executive_suite_360_survey_question_9_lower_label"),
+              upperLabel: t("templates.executive_suite_360_survey_question_9_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_10"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.executive_suite_360_survey_question_10_headline"),
+              required: false,
+              placeholder: t("templates.executive_suite_360_survey_question_10_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const individualContributor360Survey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.individual_contributor_360_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.individual_contributor_360_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_1_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_1_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_2_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_2_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_3_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_3_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_4_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_4_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_5_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_5_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.individual_contributor_360_survey_question_6_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_6_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.individual_contributor_360_survey_question_7_headline"),
+              lowerLabel: t("templates.individual_contributor_360_survey_question_7_lower_label"),
+              upperLabel: t("templates.individual_contributor_360_survey_question_7_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.individual_contributor_360_survey_question_8_headline"),
+              required: false,
+              placeholder: t("templates.individual_contributor_360_survey_question_8_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const leadershipEffectivenessSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.leadership_effectiveness_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.leadership_effectiveness_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_1_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_1_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_2_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_2_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_3_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_3_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_4_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_4_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_5_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_5_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_effectiveness_survey_question_6_headline"),
+              lowerLabel: t("templates.leadership_effectiveness_survey_question_6_lower_label"),
+              upperLabel: t("templates.leadership_effectiveness_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.leadership_effectiveness_survey_question_7_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.leadership_effectiveness_survey_question_7_choice_1"),
+                t("templates.leadership_effectiveness_survey_question_7_choice_2"),
+                t("templates.leadership_effectiveness_survey_question_7_choice_3"),
+                t("templates.leadership_effectiveness_survey_question_7_choice_4"),
+                t("templates.leadership_effectiveness_survey_question_7_choice_5"),
+                t("templates.leadership_effectiveness_survey_question_7_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.leadership_effectiveness_survey_question_8_headline"),
+              required: false,
+              placeholder: t("templates.leadership_effectiveness_survey_question_8_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const skipLevelSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.skip_level_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.skip_level_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.skip_level_survey_question_1_headline"),
+              lowerLabel: t("templates.skip_level_survey_question_1_lower_label"),
+              upperLabel: t("templates.skip_level_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.skip_level_survey_question_2_headline"),
+              lowerLabel: t("templates.skip_level_survey_question_2_lower_label"),
+              upperLabel: t("templates.skip_level_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.skip_level_survey_question_3_headline"),
+              lowerLabel: t("templates.skip_level_survey_question_3_lower_label"),
+              upperLabel: t("templates.skip_level_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.skip_level_survey_question_4_headline"),
+              lowerLabel: t("templates.skip_level_survey_question_4_lower_label"),
+              upperLabel: t("templates.skip_level_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.skip_level_survey_question_5_headline"),
+              lowerLabel: t("templates.skip_level_survey_question_5_lower_label"),
+              upperLabel: t("templates.skip_level_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.skip_level_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.skip_level_survey_question_6_choice_1"),
+                t("templates.skip_level_survey_question_6_choice_2"),
+                t("templates.skip_level_survey_question_6_choice_3"),
+                t("templates.skip_level_survey_question_6_choice_4"),
+                t("templates.skip_level_survey_question_6_choice_5"),
+                t("templates.skip_level_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.skip_level_survey_question_7_headline"),
+              required: false,
+              placeholder: t("templates.skip_level_survey_question_7_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const firstTimeManagerSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.first_time_manager_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.first_time_manager_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.first_time_manager_survey_question_1_headline"),
+              lowerLabel: t("templates.first_time_manager_survey_question_1_lower_label"),
+              upperLabel: t("templates.first_time_manager_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.first_time_manager_survey_question_2_headline"),
+              lowerLabel: t("templates.first_time_manager_survey_question_2_lower_label"),
+              upperLabel: t("templates.first_time_manager_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.first_time_manager_survey_question_3_headline"),
+              lowerLabel: t("templates.first_time_manager_survey_question_3_lower_label"),
+              upperLabel: t("templates.first_time_manager_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.first_time_manager_survey_question_4_headline"),
+              lowerLabel: t("templates.first_time_manager_survey_question_4_lower_label"),
+              upperLabel: t("templates.first_time_manager_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.first_time_manager_survey_question_5_headline"),
+              lowerLabel: t("templates.first_time_manager_survey_question_5_lower_label"),
+              upperLabel: t("templates.first_time_manager_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.first_time_manager_survey_question_6_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.first_time_manager_survey_question_6_choice_1"),
+                t("templates.first_time_manager_survey_question_6_choice_2"),
+                t("templates.first_time_manager_survey_question_6_choice_3"),
+                t("templates.first_time_manager_survey_question_6_choice_4"),
+                t("templates.first_time_manager_survey_question_6_choice_5"),
+                t("templates.first_time_manager_survey_question_6_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.first_time_manager_survey_question_7_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.first_time_manager_survey_question_7_choice_1"),
+                t("templates.first_time_manager_survey_question_7_choice_2"),
+                t("templates.first_time_manager_survey_question_7_choice_3"),
+                t("templates.first_time_manager_survey_question_7_choice_4"),
+                t("templates.first_time_manager_survey_question_7_choice_5"),
+                t("templates.first_time_manager_survey_question_7_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.first_time_manager_survey_question_8_headline"),
+              required: false,
+              placeholder: t("templates.first_time_manager_survey_question_8_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const managerSelfAssessmentSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.manager_self_assessment_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.manager_self_assessment_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_1_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_1_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_2_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_2_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_3_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_3_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_4_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_4_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_5_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_5_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.manager_self_assessment_survey_question_6_headline"),
+              lowerLabel: t("templates.manager_self_assessment_survey_question_6_lower_label"),
+              upperLabel: t("templates.manager_self_assessment_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildMultipleChoiceElement({
+              type: TSurveyElementTypeEnum.MultipleChoiceSingle,
+              headline: t("templates.manager_self_assessment_survey_question_7_headline"),
+              required: true,
+              shuffleOption: "none",
+              choices: [
+                t("templates.manager_self_assessment_survey_question_7_choice_1"),
+                t("templates.manager_self_assessment_survey_question_7_choice_2"),
+                t("templates.manager_self_assessment_survey_question_7_choice_3"),
+                t("templates.manager_self_assessment_survey_question_7_choice_4"),
+                t("templates.manager_self_assessment_survey_question_7_choice_5"),
+                t("templates.manager_self_assessment_survey_question_7_choice_6"),
+              ],
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.manager_self_assessment_survey_question_8_headline"),
+              required: false,
+              placeholder: t("templates.manager_self_assessment_survey_question_8_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const coachingEffectivenessSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.coaching_effectiveness_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.coaching_effectiveness_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.coaching_effectiveness_survey_question_1_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_1_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.coaching_effectiveness_survey_question_2_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_2_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.coaching_effectiveness_survey_question_3_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_3_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.coaching_effectiveness_survey_question_4_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_4_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.coaching_effectiveness_survey_question_5_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_5_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.coaching_effectiveness_survey_question_6_headline"),
+              lowerLabel: t("templates.coaching_effectiveness_survey_question_6_lower_label"),
+              upperLabel: t("templates.coaching_effectiveness_survey_question_6_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.coaching_effectiveness_survey_question_7_headline"),
+              required: false,
+              placeholder: t("templates.coaching_effectiveness_survey_question_7_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
+const leadershipTrustSurvey = (t: TFunction): TTemplate => {
+  const localSurvey = getDefaultSurveyPreset(t);
+  return buildSurvey(
+    {
+      name: t("templates.leadership_trust_survey_name"),
+      role: "peopleManager",
+      industries: ["saas", "eCommerce", "other"],
+      channels: ["link"],
+      description: t("templates.leadership_trust_survey_description"),
+      endings: localSurvey.endings,
+      hiddenFields: hiddenFieldsDefault,
+      blocks: [
+        buildBlock({
+          name: t("templates.block_1"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_1_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_1_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_1_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_2"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_2_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_2_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_2_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_3"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_3_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_3_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_3_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_4"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_4_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_4_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_4_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_5"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_5_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_5_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_5_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_6"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "number",
+              headline: t("templates.leadership_trust_survey_question_6_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_6_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_6_upper_label"),
+              required: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_7"),
+          elements: [
+            buildRatingElement({
+              range: 5,
+              scale: "star",
+              headline: t("templates.leadership_trust_survey_question_7_headline"),
+              lowerLabel: t("templates.leadership_trust_survey_question_7_lower_label"),
+              upperLabel: t("templates.leadership_trust_survey_question_7_upper_label"),
+              required: true,
+              isColorCodingEnabled: true,
+            }),
+          ],
+          t,
+        }),
+        buildBlock({
+          name: t("templates.block_8"),
+          elements: [
+            buildOpenTextElement({
+              headline: t("templates.leadership_trust_survey_question_8_headline"),
+              required: false,
+              placeholder: t("templates.leadership_trust_survey_question_8_placeholder"),
+              inputType: "text",
+              longAnswer: true,
+            }),
+          ],
+          buttonLabel: t("templates.finish"),
+          t,
+        }),
+      ],
+    },
+    t
+  );
+};
+
 export const templates = (t: TFunction): TTemplate[] => [
   cartAbandonmentSurvey(t),
   siteAbandonmentSurvey(t),
@@ -6654,6 +8046,16 @@ export const templates = (t: TFunction): TTemplate[] => [
   psychologicalSafetySurvey(t),
   teamEffectivenessSurvey(t),
   changeReadinessSurvey(t),
+  managerSupervisor360Survey(t),
+  seniorLeader360Survey(t),
+  executiveSuite360Survey(t),
+  individualContributor360Survey(t),
+  leadershipEffectivenessSurvey(t),
+  skipLevelSurvey(t),
+  firstTimeManagerSurvey(t),
+  managerSelfAssessmentSurvey(t),
+  coachingEffectivenessSurvey(t),
+  leadershipTrustSurvey(t),
   discAssessmentTemplate(t),
   bigFiveAssessmentTemplate(t),
   myersBriggsAssessmentTemplate(t),
